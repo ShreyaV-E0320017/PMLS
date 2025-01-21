@@ -1,0 +1,300 @@
+%%
+%% This is file `sample-sigconf-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,authordraft')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigconf-authordraft.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+
+\documentclass[sigconf]{acmart}
+
+% Remove ACM reference format, conference information, and page numbers
+\settopmatter{printacmref=false, printfolios=false} % Disables ACM reference format and folios (page numbers)
+\renewcommand\footnotetextcopyrightpermission[1]{} % Disables the conference footnote
+
+% Clear any predefined headers/footers in case the ACM template adds them back
+\fancyhf{} % Clear all headers and footers
+\setlength{\headheight}{0pt} % Set header height to zero
+
+% Ensure all pages are set to 'empty' to remove header/footer across the document
+\AtBeginDocument{\pagestyle{empty}} % Sets the empty page style at the beginning of document
+
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{mathptmx}
+\usepackage{amsmath}  % for math symbols
+\usepackage{longtable}
+\usepackage{booktabs}
+\fontsize{14pt}{16pt}\selectfont
+\usepackage{float} 
+\usepackage{lipsum} % For dummy text
+
+\pagestyle{plain}
+
+\begin{document}
+
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Achieving enhanced inference using automated optimization of deep learning compilers}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Shreya Vairava Subramanian}
+\email{sv523@cam.ac.uk}
+\affiliation{%
+  \institution{Department of Computer Science and Technology}
+  \institution{University of Cambridge}
+  \country{United Kingdom}
+}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+Tools developed to achieve faster training and inference are deep learning compilers. Deep learning models often face the danger of maintaining efficiency. This could be due to issues such as higher computational cost, dependency on advanced hardware technologies, scalability, memory consumption, energy consumption and more. In order to overcome these challenges, automated optimization strategies can be implemented to achieve higher efficiency of models during training and inference. The main goal of this paper is to analyze how such strategies can be applied to these complex models to maintain efficiency without succumbing to such challenges. Different types of automated optimization techniques were trained on popular datasets to analyze the best combination required to achieve faster efficiency. 
+\end{abstract}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+
+A subset of artificial intelligence to model complex patterns is deep learning [1]. Deep learning compilers [2] are defined as tools that convert high - level code such as those written using tensorflow to low - level code such as those that performs operations to speed up the process of training and inference. There are different types of such compilers including TensorRT [3], Tensor Virtual Machine (TVM) [4], Accelerated Linear Algebra (XLA), Glow (Facebook) [5], Apache MXNET Compiler [6]. As models grow with respect to size and complexity, it becomes resource - intensive to code such models which may potentially include significant number of parameters, extensive cost for computation and larger usage of memory. In order to address these challenges, automated optimization replaces the burden of manual optimization. Automated optimization techniques such as Operator Fusion [7], Quantization [8], Pruning [9], Memory Optimization [10], Layer Fusion [11],  Automatic Mixed Precision [12], Batching [13] and Parallelization [14] are incorporated into popular datasets like MNIST [16], CIFAR - 10 [17], CIFAR - 100 [18], SVHN [19] and FASHION - MNIST [20] with the aim to achieve enhanced efficiency during training.
+
+
+\section{Literature Review}
+With the five different types of deep learning compilers mentioned above, TensorRT, developed by NVIDIA was considered to be worked upon due to it's record of achieving best performance on hardware accelerators like Graphical processing Units [21] and Tensor Processing Units [22]. Another advantage was the ability to support mixed - precision computation making it ideal to achieve faster outcomes with less delay. TVM was found to be heavily complicated in terms of setup and integration to achieve better efficiency [23]. XLA was found to be less hardware - agnostic i.e., the ability to work across types of hardware platforms in comparison to TensorRT [24]. Glow was specifically designed for mobile application which lacks the power of advanced accelerators like GPUs / TPUs [25]. MXNET was found to be working well only within the Apache ecosystem and lacked scalability to perform in other environments [26]. 
+
+\section {Methodology}
+
+The first step is to identify the datasets to be worked upon in order to understand the scope of performance. Popular datasets like the ones mentioned before were taken for implementation. Figure 1 shows the compiled list of dataset. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{80580a0b780e754d26f914e05947a67616ffac20.jpg}
+    \caption{Dataset}
+    \label{fig:enter-label}
+\end{figure}
+
+The architecture implemented for these tasks are as follows.
+
+\begin{enumerate}
+    \item A CNN architecture was implemented for MNIST.
+    \item A ResNet - 18 architecture was implemented for CIFAR - 10 and CIFAR - 100.
+    \item A VGG - 16 architecture was implemented for FASHION - MNIST.
+    \item An EfficientNet architecture was implemented for SVHN.
+\end{enumerate}
+
+\subsection{Operator Fusion}
+
+Operator Fusion is a technique in which the number of operations performed during automated optimization is reduced by concatenating multiple operations into a single operation. In a deep learning model, there might be several operations a neural network has to undergo. This potentially includes
+Linear operations such as matrix addition [27], matrix multiplication [28] , convolution [29]
+Non - Linear operations such as activation functions [30]
+Normalization operations including batch normalization [31], layer normalization [32], instance normalization [33]
+Pooling operations [34]
+Regularization operations including dropout rate [35] and regularization strategies [36]
+Loss functions [37]
+
+The advantage of using operator fusion is to reduce memory consumption and fasten the computational procedure. 
+
+\subsection{Quantization}
+
+Quantization is defined by decreasing the precision. The 32 - bit floating point numbers are converted to 16 - bit floating point numbers and 8 - bit floating point numbers.
+
+There are different types of quantization.
+\begin{enumerate}
+    \item\textit{\textbf{Quantization - aware training}} - It is performed for obtaining lower precision numbers. 
+    \item\textbf{\textit{Binary and Ternary Quantization}} - These are advanced quantization methods used to reduce precision to -1 and +1 for binary operation and -1, 0, +1 for ternary operations.
+
+\end{enumerate}
+
+The advantage of using quantization for optimization is to reduce the size of the model and increase the consistency during inference.
+
+\subsection{Pruning}
+
+\begin{enumerate}
+    \item \textbf{\textit{Weight Pruning}} - The size of the model can be reduced by weight pruning which eliminates the share of weights based on their significance in the neural network.
+    \item \textit{\textbf{Channel Pruning}} - The inference can be fastened by removing a set of neurons from the neural network.
+    \item \textbf{\textit{Structured Pruning}} - The process of removing a set of parameters including neurons, weights, activation functions etc. by considering the structure of the neural network.
+    \item \textbf{\textit{Unstructured Pruning}} - The process of removing individual parameters including neurons, weights, activation functions etc. without considering the structure of the neural network.
+    
+\end{enumerate}
+
+\subsection{Memory Optimization}
+
+The process of reducing the memory capacity while performing training and inference on a model is called memory optimization. This works by reusing the memory over time. A block of memory is reused when it's previous requirement is finished. The concept of buffer sharing where memory blocks are dynamically assigned to various jobs during training and inference.
+Some of the memory optimization strategies include :
+
+\begin{enumerate}
+    \item \textbf{\textit{In - Place Operations}} - The need for extra memory allocation can be reduced by modifying existing tensors instead of creating new ones.
+    \item \textbf{\textit{Tensor Recycling}} - The unused memory of existing tensors can be allocated to new tensors.
+    \item \textbf{\textit{Dynamic Memory Management}} - Memory can be dynamically allocated during execution through TensorRT.
+\end{enumerate}
+
+\subsection{Layer Fusion}
+Similar to how operator fusion works by concatenating multiple operations, layer fusion works by concatenating multiple layers in a neural network. The advantage of using layer fusion is to reduce computational overhead and memory bandwidth. 
+
+\subsection{Automatic Mixed Precision}
+Different to quantization, automatic mixed precision is used to decrease the precision but by combining multiple formats. Formats like FP16, used for arithmetic operations and FP32, used for scientific operations are combined in this procedure. The different types of automatic mixed precision are :
+
+\begin{enumerate}
+    \item \textbf{\textit{Static Mixed Precision}} - The type of operation is manually defined in this procedure on whether a lower precision or a full precision have to employed.
+    \item \textbf{\textit{Dynamic Mixed Precision}} - Instead of manually defining the operation, the precision is mixed dynamically during execution.
+    \item \textbf{\textit{Layer - Wise Mixed Precision}} - Different types of precision values are assigned to different layers in a neural network.
+\end{enumerate}
+
+\subsection{Batching \& Parallelization}
+Similar to how batch normalization is employed in neural networks, batching is the process of splitting the dataset into a certain group to simplify the training and inference by not overcrowding the memory. The power of modern hardware accelerators can be leveraged by batching the data into smaller groups. The optimization can become efficient when data is processed in batches as memory access patterns become more accessible. The computational overhead can be reduced during batching. This is because the time spent on transferring the data between CPU and GPU can be minimized as there is less amount of memory consumed due to batching the data for processing.
+
+\section{References}
+
+\textbf{LeCun, Yann, Bengio, Yoshua, \& Hinton, Geoffrey. (2015). Deep learning. Nature, 521(7553), 436-444.} \vspace{3mm}
+
+\textbf{Abadi, Martín, Agarwal, Ashish, Barham, Paul, Chen, Jian, Davis, Andy, Dean, Jeffrey, Devin, Matthias, Ghemawat, Sanjay, Irving, Geoffrey, Isard, Michael, et al. (2016). TensorFlow: A system for large-scale machine learning. OSDI.} \vspace{3mm}
+
+\textbf{Fast, Tony, Ochoa, Sebastian, \& Saito, Shohei. (2020). TensorRT: High-performance inference on NVIDIA GPUs. NVIDIA Corporation.} \vspace{3mm}
+
+\textbf{Chen, Tianqi, Moreau, Trevor, Nguyen, Hieu, Zhang, Shuo, Bhat, Megha, Chen, Yujia, Rastegari, Mohammad, et al. (2018). TVM: An automated end-to-end optimizing compiler for deep learning. Proceedings of the 13th USENIX Symposium on Operating Systems Design and Implementation (OSDI 18).} \vspace{3mm}
+
+\textbf{Jouppi, Norman P., et al. (2017). In-Datacenter Performance Analysis of a Tensor Processing Unit. ACM/IEEE 44th Annual International Symposium on Computer Architecture (ISCA).}\vspace{3mm}
+
+\textbf{Berg, Nikolai, Cichocki, Andrzej, et al. (2018). Glow: A Compiler for Deep Learning. Facebook Research.} \vspace{3mm}
+
+\textbf{Chen, Tianqi, et al. (2015). MXNet: A Flexible and Efficient Machine Learning Library for Heterogeneous Distributed Systems. arXiv:1512.01274.}\vspace{3mm}
+
+\textbf{Sze, Vivian, et al. (2017). Efficient processing of deep neural networks: A tutorial and survey. Proceedings of the IEEE, 105(12), 2295-2329.}\vspace{3mm}
+
+\textbf{Jacob, Benoit, et al. (2018). Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference. arXiv:1712.05877.} \vspace{3mm}
+
+\textbf{Han, Song, Mao, Huizi, \& Dally, William J. (2015). Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding. ICLR.}\vspace{3mm}
+
+\textbf{Mundra, P., et al. (2019). Memory-efficient deep learning for large-scale models. Proceedings of the IEEE International Conference on Computer Vision.} \vspace{3mm}
+
+\textbf{Sze, Vivian, et al. (2017). Efficient Processing of Deep Neural Networks: A Tutorial and Survey. Proceedings of the IEEE, 105(12), 2295-2329.} \vspace{3mm}
+
+\textbf{Micikevicius, Petr, et al. (2018). Mixed Precision Training. International Conference on Learning Representations (ICLR).} \vspace{3mm}
+
+\textbf{Ba, Jimmy, et al. (2016). A Study on Overfitting in Deep Neural Networks. arXiv:1604.07117.} \vspace{3mm}
+
+\textbf{Dean, Jeffrey, et al. (2012). Large Scale Distributed Deep Networks. Advances in Neural Information Processing Systems (NIPS).} \vspace{3mm}
+
+\textbf{LeCun, Yann, et al. (1998). Gradient-Based Learning Applied to Document Recognition. Proceedings of the IEEE, 86(11), 2278-2324.} \vspace{3mm}
+
+\textbf{Krizhevsky, Alex, et al. (2009). Learning Multiple Layers of Features from Tiny Images. Technical Report, University of Toronto.} \vspace{3mm}
+
+\textbf{Netzer, Y., et al. (2011). Reading Digits in Natural Images with Unsupervised Feature Learning. NIPS Workshop on Deep Learning and Unsupervised Feature Learning.} \vspace{3mm}
+
+\textbf{Xiao, Han, et al. (2017). Fashion-MNIST: A Novel Image Dataset for Benchmarking Machine Learning Algorithms. arXiv:
+1708.07747.} \vspace{3mm}
+
+\textbf{NVIDIA. (2021). NVIDIA GeForce GTX 1080 Ti Graphics Card. NVIDIA Corporation.}\vspace{3mm}
+
+\textbf{Jouppi, Norman P., et al. (2017). In-Datacenter Performance Analysis of a Tensor Processing Unit. ACM/IEEE 44th Annual International Symposium on Computer Architecture (ISCA).} \vspace{3mm}
+
+\textbf{Chen, Tianqi, et al. (2018). TVM: An Automated End-to-End Optimizing Compiler for Deep Learning. OSDI 18.} \vspace{3mm}
+
+\textbf{Saito, Shohei, et al. (2020). TensorRT: High-performance inference on NVIDIA GPUs. NVIDIA Corporation.} \vspace{3mm}
+
+\textbf{Berg, Nikolai, et al. (2018). Glow: A Compiler for Deep Learning. Facebook Research.} \vspace{3mm}
+
+\textbf{Chen, Tianqi, et al. (2015). MXNet: A Flexible and Efficient Machine Learning Library for Heterogeneous Distributed Systems. arXiv:1512.01274.} \vspace{3mm}
+
+\textbf{Strang, Gilbert. (2009). Introduction to Linear Algebra. Wellesley
+-Cambridge Press.} \vspace{3mm}
+
+\textbf{Goodfellow, Ian, et al. (2016). Deep Learning. MIT Press.} \vspace{3mm}
+
+\textbf{Ioffe, Sergey, \& Szegedy, Christian. (2015). Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift. ICML.} \vspace{3mm}
+
+\textbf{Ba, Jimmy, Kiros, Ryan, \& Hinton, Geoffrey. (2016). Layer Normalization. arXiv:1607.06450.} \vspace{3mm}
+
+\textbf{Ulyanov, Dmitry, et al. (2016). Instance Normalization: The Missing Ingredient for Fast Stylization. arXiv:1607.08022.}\vspace{3mm}
+
+\textbf{LeCun, Yann, et al. (1998). Gradient-Based Learning Applied to Document Recognition. Proceedings of the IEEE, 86(11), 2278-2324.} \vspace{3mm}
+
+\textbf{Srivastava, Nitish, et al. (2014). Dropout: A Simple Way to Prevent Neural Networks from Overfitting. JMLR.} \vspace{3mm}
+
+\textbf{Ng, Andrew Y. (2004). Feature Selection, L1 vs. L2 Regularization, and Rotational Invariance. Proceedings of the Twenty-First International Conference on Machine Learning.} \vspace{3mm}
+
+\end{document}
